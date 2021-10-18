@@ -3,12 +3,17 @@ import {StyleSheet, View, Button, Image, TextInput, TouchableOpacity} from 'reac
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { BottomNavigation, Text } from 'react-native-paper';
-import Login from './Login'
 import Home from './Home'
-import Register from './Register'
-import logo from '../assets/logo.png'
 
 const Tab = createMaterialBottomTabNavigator();
+
+function TEST() {
+  return (
+    <View>
+      <Text>HELOOOOO</Text>
+    </View>
+  );
+}
 
 function BottomNav() {
   return (
@@ -29,7 +34,7 @@ function BottomNav() {
       />
       <Tab.Screen
         name="notify"
-        component={Login}
+        component={TEST}
         options={{
           tabBarLabel: 'Thông báo',
           tabBarIcon: ({ color }) => (
@@ -39,7 +44,7 @@ function BottomNav() {
       />
       <Tab.Screen
         name="profile"
-        component={Login}
+        component={TEST}
         options={{
           tabBarLabel: 'Tài khoản',
           tabBarIcon: ({ color }) => (
@@ -49,7 +54,7 @@ function BottomNav() {
       />
       <Tab.Screen
         name="setting"
-        component={Login}
+        component={TEST}
         options={{
           tabBarLabel: 'Cài đặt',
           tabBarIcon: ({ color }) => (

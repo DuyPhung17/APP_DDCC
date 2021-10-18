@@ -6,42 +6,22 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Login from './screens/Login'
 import Register from './screens/Register'
-import BottomNav from './screens/BottomNav'
+import MainPage from './screens/MainPage';
+import Camera from './screens/Camera';
 
-const LoginStack = createNativeStackNavigator();
-const RegisterStack = createNativeStackNavigator();
-const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 
-const LoginScreen = ({navigation})=>{
-  <LoginStack.Navigator>
-    <LoginStack.Screen name="login" component={{Login}} options={{
-      headerLeft: ()=>(
-        <MaterialCommunityIcons name="menu" color={color} size={26} 
-        onPress = {()=> navigation.openDrawer()}/>
-      )}}/>
-  </LoginStack.Navigator>
-};
-
-const RegisterScreen = ({navigation})=>{
-  <RegisterStack.Navigator screenOptions={{
-    headerStyle: {backgroundColor: '#8340bd',},
-    headerTintColor: '#fff',
-  }}>
-    <RegisterStack.Screen name="register" component={{Register}}/>
-  </RegisterStack.Navigator>
-};
-
-export default function App() {
+export default function App(navigation) {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="login">
-        <Drawer.Screen name="login" component={Login} />
-        <Drawer.Screen name="register" component={Register} />
-        <Drawer.Screen name="bottomNav" component={BottomNav} />
-      </Drawer.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name='login' component={Login} options={{ headerShown: false }}/>
+        <Stack.Screen name='register' component={Register} options={{ headerShown: false }}/>
+        <Stack.Screen name='mainPage' component={MainPage} options={{ headerShown: false }}/>
+        <Stack.Screen name='camera' component={Camera}/>
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }

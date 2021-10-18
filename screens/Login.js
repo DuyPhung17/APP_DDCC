@@ -7,7 +7,7 @@ const Login = ({navigation})=>{
         navigation.navigate('register')
     };
     function navHome() {
-        navigation.navigate('bottomNav')
+        navigation.replace('mainPage')
     }
 
     return (
