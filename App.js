@@ -10,6 +10,7 @@ import Login from './screens/Login'
 import Register from './screens/Register'
 import MainPage from './screens/MainPage';
 import Camera from './screens/Camera';
+import Manage from './screens/Manage';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ export default function App(navigation) {
         <Stack.Screen name='register' component={Register} options={{ headerShown: false }}/>
         <Stack.Screen name='mainPage' component={MainPage} options={{ headerShown: false }}/>
         <Stack.Screen name='camera' component={Camera}/>
+        <Stack.Screen name='manage' component={Manage}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

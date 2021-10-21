@@ -4,19 +4,19 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import logo from '../assets/logo.png'
 
 const Home = ({navigation})=>{
-    function navigate() {
-        navigation.navigate('camera')
-    };
+    function navCam() {navigation.navigate('camera')};
+    function navMan() {navigation.navigate('manage')};
+
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={navigate} style={styles.itemView}>
+            <TouchableOpacity onPress={navCam} style={styles.itemView}>
                 <MaterialCommunityIcons name="camera" color="white" size={50} />
                 <Text style={{color:'white', marginTop:10}}>Theo dõi Camera</Text>
             </TouchableOpacity>
-            <View style={styles.itemView}>
+            <TouchableOpacity onPress={navMan} style={styles.itemView}>
                 <MaterialCommunityIcons name="folder" color="white" size={50} />
                 <Text style={{color:'white', marginTop:10}}>Quản lý</Text>
-            </View>
+            </TouchableOpacity>
             <View style={styles.itemView}>
                 <MaterialCommunityIcons name="account-check" color="white" size={50} />
                 <Text style={{color:'white', marginTop:10}}>Điểm danh</Text>
